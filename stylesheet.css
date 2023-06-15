@@ -1,0 +1,268 @@
+﻿body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+.columnContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'goalroll goalroll goalArea goalArea startRound startRound'
+        'num1 num2 num3 num4 num5 num6'
+        'mathContainer mathContainer mathContainer mathContainer mathContainer mathContainer ';
+    grid-template-rows: calc(10% - 10px) auto 75%;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    /*grid-template-columns: repeat(6, 1fr);*/
+    /*grid-template-rows: calc(10% - 10px) calc(15% - 10px) 75%;*/
+    grid-gap: 1vw;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+    .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);   
+    }
+
+#goal-area {
+    display: inline-block;
+    grid-area: goalArea;
+    font-size: clamp(2vw, 2.5vmin, 2.5vmin);
+    text-align: center;
+    padding: 2%;
+}
+#startRound {
+    grid-area: startRound;
+    width: 100%;
+}
+
+.num-container {
+    border: medium inset;
+}
+
+.num {
+    font-size: 2.5vw;
+    text-align: center;
+    padding: 0;
+    /*font-size: clamp(2.5vw, 2.5vmin, 2.5vmin);*/
+}
+
+    #num1 { 
+        grid-area: num1;
+    }
+
+    #num2 {
+        grid-area: num2;
+    }
+
+    #num3 {
+        grid-area: num3;
+    }
+
+    #num4 {
+        grid-area: num4;
+    }
+
+    #num5 {
+        grid-area: num5;
+    }
+
+    #num6 {
+        grid-area: num6;
+    }
+
+.num-container > .num {
+    width: 100%;
+    height: 100%;
+}
+
+.choice {
+    width: 100%;
+    height: 50%;
+    user-select: none;
+    font-size: 2.5vw;
+    background-color: black;
+}
+
+.chooseBig {
+    background-color: blue;
+}
+
+.chooseLittle {
+    background-color: green;
+}
+
+#board {
+    position: relative;
+    grid-area: mathContainer;
+    background-image: url('images/grid.jpg');
+    background-size: 75%;
+    border: thick inset;
+    user-select: none;
+    padding-left:3vw;
+    padding-top: 3vw;
+    margin:1vw;
+    width:85%;
+
+}
+
+.unselected {
+    background-color: white;
+    pointer-events: all;
+}
+
+.selected {
+    background-color: darkgray;
+    color: gray;
+    pointer-events: none;
+}
+
+.term1, .term2, .opperation, .equalSign {
+    color: blue;
+    font-family: 'Brush Script MT', cursive;
+    user-select: none;
+    font-size: 3vw;
+    font-weight: bolder;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+.noClick {
+    color: grey;
+    pointer-events: none;
+}
+
+
+.topright {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 18px;
+    background-color: white;
+    border: solid lightblue;
+    width: 12%;
+    aspect-ratio:1;
+}
+.oppButtons {
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 10;
+    width: max-content;
+    padding: 0px;
+    width:100%;
+    aspect-ratio: 2/1;
+}
+    .oppButtons > button{
+        width: 50%;
+        aspect-ratio:1;
+        padding: 0;
+    }
+
+#submit {
+    display:block;
+    font-size:1vw;
+    padding-left: 0;
+    padding-right: 0;
+    margin: auto;
+    width: 100%;
+    
+}
+
+#goalroll {
+    /*visibility: hidden;*/
+    display: block;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5vmin;
+    grid-area: goalroll;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom:auto;
+    border-radius: 10%;
+}
+
+.equasion {
+    justify-content: start;
+    width:75%;
+}
+#timerContainer {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: grey;
+}
+
+.bigBlock {
+    border: thick outset;
+}
+#clockContainer {
+    position: relative;
+    margin: auto;
+    background-size: 100%;
+    background-color: white;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+#second {
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8;
+}
+#clockInnerCircle {
+    display: block;
+    position: relative;
+    margin: auto;
+    background-size: 100%;
+    background-color: lightblue;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    border: dotted;
+    
+
+}
+#scoreContainer {
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    /*text-align: center;*/
+    display: flex;
+}
+#score {
+    /*text-align: center;*/
+    padding: 10%;
+}
+#clockText {
+    padding-top: 12%;
+    text-align: center;
+    font-size: 1.25vw;
+    font-family: Verdana, sans-serif;
+}
+.clockText1 {
+    
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.clockText2 {
+    padding-top: 2%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.clockText3 {
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
