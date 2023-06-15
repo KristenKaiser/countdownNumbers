@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body onload="initallizeGame()">
+    <h1>Countdown</h1>
+    <div class="columnContainer">
+        <div class="grid-container bigBlock" >
+            <button id="goalroll" class="selected" onclick="goalRoll(this)"> Generate Goal </button>
+            <div id="goal-area">000</div>
+            <button id="startRound" class="selected" onclick="startRound()">Start Round</button>
+            
+            <div id="num1" class="num-container"></div>
+            <div id="num2" class="num-container"></div>
+            <div id="num3" class="num-container"></div>
+            <div id="num4" class="num-container"></div>
+            <div id="num5" class="num-container"></div>
+            <div id="num6" class="num-container"></div>
+            <div id="board">
+                <div id="math-container"></div>
+                <div class="topright">
+                    <div class="oppButtons">
+                        <button class="selected" onclick="setOpperation(this)">+</button>
+                        <button class="selected" onclick="setOpperation(this)">-</button>
+                    </div>
+                    <div class="oppButtons">
+                        <button class="selected" onclick="setOpperation(this)">x</button>
+                        <button class="selected" onclick="setOpperation(this)">/</button>
+                    </div>
+                    <button id="submit" class="selected" onclick="submit(this)">SUBMIT</button>
+                </div>
+                
+               
+            </div>
+        </div>
+        <div id="timerContainer" class="bigBlock">
+
+            <div id="clockContainer">
+                <div id="second"></div>
+                <div id="clockInnerCircle">
+                    <div id="clockText">
+
+                        <div class="clockText1">
+                           - A number cannot be used more than once.
+                        </div>
+                        <div class="clockText2">
+                            - Not all of the numbers have to be used.
+                        </div>
+                        <div class="clockText3">
+                            - Each step of a solution must result in a positive integer.
+                        </div>
+                        <div class="clockText2 validNum">
+                            - Any calculation step that yields a
+                        </div> 
+                        <div class="clockText1 validNum">
+                            negative number, a fraction, or zero is prohibited.
+
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+<template id="numSizeChoice_temp">
+    <div class="chooseBig choice" onclick="sizeClick(this, 'big')">BIG</div>
+    <div class="chooseLittle choice" onclick="sizeClick(this, 'little')">little</div>
+</template>
+<template id="numberButton_temp">
+    <button class="num selected" onclick="numClick(this)">_</button>
+</template>
+<template id="equasion_temp">
+    <div class="equasion">
+        <nobr class="term1" onclick="board.eraseTerm(this)"></nobr>
+        <nobr class="opperation"onclick="board.eraseOpp(this)">  </nobr>
+        <nobr class="term2" onclick="board.eraseTerm(this)"></nobr>
+        <nobr class="equalSign"></nobr>
+        <nobr class="answer"></nobr>
+    </div>
+</template>
+
+
+
+<script src="script.js"></script>
